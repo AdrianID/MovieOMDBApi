@@ -1,16 +1,27 @@
 <template>
   <div id="app">
-    Hello World
+    <search @search="changeMovieResult"></search>
   </div>
 </template>
 
 <script>
+import Search from './components/Search'
 
 export default {
-  name: 'app'
-}
+  name: 'app',
+  components: {
+    Search
+  },
+  data() {
+    return {
+      movies: []
+    };
+  },
+  methods: {
+    changeMovieResult(results) {
+      this.movies = results
+    }
+  }
+};
 </script>
 
-<style>
-
-</style>
